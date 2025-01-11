@@ -1,0 +1,60 @@
+README
+* A README with instructions is included with the project;
+* The README indicates the new features you added to the game;
+* The README includes information about each rubric point addressed;
+
+
+Compiling and Testing
+* The submission must compile and run without errors on the Udacity project workspace;
+
+
+Loops, Functions, I/O
+* The project demonstrates an understanding of C++ functions and control structures
+	main.cpp:
+		line 9: results outputs are put into the function;
+	snake.cpp:
+		line 50: a distance to the target cell is calculated in a function;
+* The project reads data from a file and process the data, or the program writes data to a file
+	main.cpp:
+		line 14-21: writing the results to the file; 
+* The project uses data structures and immutable variables
+ 	main.cpp:
+		line 25-29: using constants from structures.h
+
+
+Object Oriented Programming
+* One or more classes are added to the project with appropriate access specifiers for class members
+	snake.h:
+		line 48: added SnakeBot class, inherited from the Snake class;
+* Class constructors utilize member initialization lists
+	all classes use initialization lists for their constructors;
+* Overloaded functions allow the same function to operate on different parameters:
+	snake.h:
+		There are multiple constructors created for the Snake class to accept different set of parameters;
+* Classes follow an appropriate inheritance hierarchy with virtual and override functions:
+	snake.h
+		class Snake uses a virtual function UpdateHead on line 39 that later gets overriden in SnakeBot class (line 54);
+
+
+Memory Management 
+* The project makes use of references in function declarations:
+	snake.h:
+		line 13, 19, 40: using arguments sending by-reference;
+* The project uses scope / Resource Acquisition Is Initialization (RAII) where appropriate:
+	snake.h:
+		line 36: using shared pointer that follows the Resource Acquisition Is Initialization pattern;
+* The project uses move semantics to move data instead of copying it, where possible
+	main.cpp:
+		line 34: sending the controller and the renderer objects using move semantics;
+* The project uses smart pointers instead of raw pointers
+	snake.h:
+		line 36: using shared pointer;
+
+
+Concurrency
+* The project uses multithreading or async tasks
+	game.cpp:
+		lines 36, 40: using async tasks for Game::Update member method;
+* A mutex or lock is used in the project
+	game.cpp:
+		lines 92, 105: using mutex to protect the data that is shared across multiple threads;
